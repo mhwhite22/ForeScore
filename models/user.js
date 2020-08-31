@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Round = require('./round');
 
 const userSchema = new mongoose.Schema ({
     name: String,
@@ -10,4 +9,4 @@ const userSchema = new mongoose.Schema ({
 })
 
 
-module.exports = mongoose.model('user', userSchema);
+module.exports = mongoose.model('User', userSchema);

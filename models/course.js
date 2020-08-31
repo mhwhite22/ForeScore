@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
-const User = require('./user');
-const Round = require('./round');
 
 const holeSchema = new Schema ({
     holeNum: String,
