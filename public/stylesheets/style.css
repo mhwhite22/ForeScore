@@ -1,8 +1,19 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #a6cd32;
+  background-image: url('images/green.jpg');
 }
 
 a {
   color: #00B7FF;
+}
+
+#navbar {
+  display: inline-flex;
+  justify-content: space-around;
+  font: 20px "lucida Grande", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  width: 100%;
+  height: 10vh;
+  background-color: #00802b;
 }
