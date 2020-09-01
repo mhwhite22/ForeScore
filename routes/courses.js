@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
-const roundsCtrl = require('../controllers/rounds');
+const coursesCtrl = require('../controllers/courses');
 
-router.get('/rounds/index', roundsCtrl.index);
+router.get('/courses/index', coursesCtrl.index);
 //router.get('/rounds/show', roundsCtrl.show);
-router.get('/rounds/new', roundsCtrl.new);
+router.get('/courses/new', coursesCtrl.new);
+router.post('/courses/', coursesCtrl.create);
 
 
 function isLoggedIn(req, res, next) {

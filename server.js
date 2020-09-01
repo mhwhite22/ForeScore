@@ -14,6 +14,7 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var roundsRouter = require('./routes/rounds');
+const coursesRouter = require('./routes/courses');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -38,6 +39,7 @@ app.use(function (req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/', roundsRouter);
+app.use('/', coursesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

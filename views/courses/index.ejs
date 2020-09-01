@@ -1,0 +1,30 @@
+<%- include("../partials/header") %> 
+
+<% if (courses) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Par</th>
+          <th>Yardage</th>
+          <th>Slope Rating</th>
+          <th>Holes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% courses.forEach(function(c) { %>
+        <td><%= c.name %></td>
+        <td><%= c.location %></td>
+        <td><%= c.par %></td>
+        <td><%= c.yardage %></td>
+        <td><%= c.slope %></td>
+        
+        <% }); %>
+      </tbody>
+    </table>
+    <% } else { %>
+    <h5>No Courses to Display</h5>
+    <% } %> 
+
+<%- include("../partials/footer") %> 

@@ -4,12 +4,17 @@ const Round = require('../models/round');
 module.exports = {
     index,
     new: newRound,
+    create
     //show
+}
+
+function create(req, res) {
+  Round.create(req.body);
+  res.redirect('rounds/index')
 }
 
 function index(req, res) {
     Round.find({user: req.user._id}, function(err, rounds) {
-      console.log(rounds);
       res.render('rounds/index', {title: 'My Rounds', rounds});
   });
 }
