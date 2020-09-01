@@ -1,0 +1,25 @@
+<%- include("../partials/header") %> 
+<% if (rounds.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Course</th>
+        <th>Score</th>
+        <th>To Par</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% rounds.forEach(function(r) { %>
+      <td><%= r.dateOfPlay %></td>
+      <td><%= r.course %></td>
+      <td><%= r.score %></td>
+      <td><%= (r.score - 72) %></td>
+      <% }); %>
+    </tbody>
+  </table>
+  <% } else { %>
+  <h3>No Rounds to Display</h3>
+  <a href="/rounds/new">Add Rounds</a>
+  <% } %> 
+  <%- include("../partials/footer") %> 

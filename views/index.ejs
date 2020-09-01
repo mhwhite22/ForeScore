@@ -9,9 +9,6 @@
 </head>
 <body>
     <nav id="navbar">
-        <a href="/users/<%= user._id %>">My Rounds</a>
-        <a href="">New Round</a>
-        <a href="">New Course</a>
         <ul class="right">
             <li>
             <% if (user) { %>
@@ -23,28 +20,7 @@
         </ul>
     </nav>
     <h1><%= title %></h1>
-    <main>
-<h3>My Rounds</h3>
+<main>
+<%- include('partials/footer') %>
 
-<% if (user.rounds.length) { %>
-<table>
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Course</th>
-      <th>Score</th>
-      <th>To Par</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% user.rounds.forEach(function(r) { %>
-    <td><%= r.dateOfPlay %></td>
-    <td><%= r.course %></td>
-    <td><%= r.score %></td>
-    <td><%= (r.score - 72)</td>
-    <% }); %>
-  </tbody>
-</table>
-<% } else { %>
-<h5>No Rounds to Display</h5>
-<% } %> <%- include('../partials/footer') %>
+
