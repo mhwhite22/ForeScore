@@ -20,7 +20,8 @@ function create(req, res) {
 }
 
 function index(req, res) {
-    Round.find({user: req.user._id}, function(err, rounds) {
+    Round.find({user: req.user._id})
+      .populate('course').exec(function(err, rounds) {
       res.render('rounds/index', {title: 'My Rounds', rounds});
   });
 }

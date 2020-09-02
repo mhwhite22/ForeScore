@@ -13,7 +13,7 @@
       <% rounds.forEach(function(r) { %>
       <tr>
       <td><%= r.dateOfPlay %></td>
-      <td><%= r.course %></td>
+      <td><%= r.course.name %></td>
       <td><%= r.score %></td>
       <td><%= (r.score - 72) %></td>
       <td><a href="">Details</a></td>
