@@ -3,6 +3,10 @@ body {
   background-color: #a6cd32;
 }
 
+main {
+  background-image: url("greenpng");
+}
+
 a {
   color: #00B7FF;
 }

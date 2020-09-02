@@ -1,6 +1,6 @@
 <%- include("../partials/header") %> 
 
-<% if (courses) { %>
+<% if (courses.length) { %>
     <table>
       <thead>
         <tr>
@@ -14,12 +14,14 @@
       </thead>
       <tbody>
         <% courses.forEach(function(c) { %>
+        <tr>
         <td><%= c.name %></td>
         <td><%= c.location %></td>
         <td><%= c.par %></td>
         <td><%= c.yardage %></td>
         <td><%= c.slope %></td>
-        
+        <td><%= c.numHoles %></td>
+      </tr>
         <% }); %>
       </tbody>
     </table>

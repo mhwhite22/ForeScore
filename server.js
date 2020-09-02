@@ -38,8 +38,8 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', indexRouter);
-app.use('/', roundsRouter);
-app.use('/', coursesRouter);
+app.use('/rounds', roundsRouter);
+app.use('/courses', coursesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

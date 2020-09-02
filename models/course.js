@@ -14,11 +14,11 @@ const courseSchema = new Schema ({
     user: { type: Schema.Types.ObjectId, ref: 'User'},
     name: String,
     location: String,
-    par: Number,
+    par: { type: Number, required: true, min: 34, max: 73 },
     yardage: Number,
     slope: Number,
     numHoles: Number,
-    holes: [{holeSchema}]
+    holes: [holeSchema]
 });
 
 module.exports = mongoose.model('Course', courseSchema);

@@ -1,4 +1,4 @@
-const Course = require('../models/Course');
+const Course = require('../models/course');
 
 module.exports = {
     index,
@@ -8,8 +8,12 @@ module.exports = {
 }
 
 function create(req, res) {
-  Course.create(req.body);
-  res.redirect('./index')
+  req.body.user = req.user;
+  //Course.create(req.body);
+  let course = new Course(req.body)
+  course.save(function(e) {
+  res.redirect('/courses')
+  });
 }
 
 function index(req, res) {

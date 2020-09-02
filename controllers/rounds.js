@@ -1,4 +1,4 @@
-const User = require('../models/user');
+const Course = require('../models/course')
 const Round = require('../models/round');
 
 module.exports = {
@@ -9,8 +9,14 @@ module.exports = {
 }
 
 function create(req, res) {
-  Round.create(req.body);
-  res.redirect('rounds/index')
+  req.body.user = req.user;
+  let newRound = new Round(req.body);
+  newRound.save(function(e) {
+    if (e) {
+      return;
+    }
+  res.redirect('/rounds')
+  })
 }
 
 function index(req, res) {
@@ -20,8 +26,10 @@ function index(req, res) {
 }
 
 function newRound(req, res) {
-  console.log('hitting');
-  res.render('rounds/new', {title: 'Add A New Round'});
+  Course.find({user: req.user._id}, function(err, courses) {
+    console.log(courses);
+    res.render('rounds/new', {title: 'Add A New Round', courses});
+  })
 }
 
 // function show (req, res) {

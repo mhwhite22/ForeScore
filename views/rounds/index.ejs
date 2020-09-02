@@ -11,10 +11,12 @@
     </thead>
     <tbody>
       <% rounds.forEach(function(r) { %>
+      <tr>
       <td><%= r.dateOfPlay %></td>
       <td><%= r.course %></td>
       <td><%= r.score %></td>
       <td><%= (r.score - 72) %></td>
+      </tr>
       <% }); %>
     </tbody>
   </table>
