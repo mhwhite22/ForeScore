@@ -15,7 +15,7 @@
       <tbody>
         <% courses.forEach(function(c) { %>
         <tr>
-        <td><%= c.name %></td>
+        <td><a href="/courses/<%= c._id %>"><%= c.name %></a></td>
         <td><%= c.location %></td>
         <td><%= c.par %></td>
         <td><%= c.yardage %></td>

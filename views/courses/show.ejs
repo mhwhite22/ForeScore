@@ -1,5 +1,27 @@
 <%- include("../partials/header") %> 
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Par</th>
+          <th>Yardage</th>
+          <th>Slope Rating</th>
+          <th>Holes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td><%= course.name %></td>
+        <td><%= course.location %></td>
+        <td><%= course.par %></td>
+        <td><%= course.yardage %></td>
+        <td><%= course.slope %></td>
+        <td><%= course.numHoles %></td>
+        <td><a href="<%= course._id %>/edit">Edit Course Details</a></td>
+      </tr>
+      </tbody>
+    </table>
 
-<h5>I'm the course show page</h5>
 
 <%- include("../partials/footer") %> 

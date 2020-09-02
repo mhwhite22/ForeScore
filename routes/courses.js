@@ -3,9 +3,12 @@ var router = express.Router();
 const coursesCtrl = require('../controllers/courses');
  // see server
 router.get('/', coursesCtrl.index);
-//router.get('/rounds/show', roundsCtrl.show);
+router.get('/:id', coursesCtrl.show);
 router.get('/new', coursesCtrl.new);
 router.post('/', coursesCtrl.create);
+router.get('/:id/edit', coursesCtrl.edit);
+router.put('/:id/update', coursesCtrl.update);
+
 
 
 function isLoggedIn(req, res, next) {
