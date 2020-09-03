@@ -5,7 +5,6 @@ module.exports = {
     index,
     new: newRound,
     create
-    //show
 }
 
 function create(req, res) {
@@ -20,15 +19,13 @@ function create(req, res) {
 }
 
 function index(req, res) {
-    Round.find({user: req.user._id})
-      .populate('course').exec(function(err, rounds) {
+    Round.find({user: req.user._id}).populate('course').exec(function(err, rounds) {
       res.render('rounds/index', {title: 'My Rounds', rounds});
   });
 }
 
 function newRound(req, res) {
   Course.find({user: req.user._id}, function(err, courses) {
-    console.log(courses);
     res.render('rounds/new', {title: 'Add A New Round', courses});
   })
 }

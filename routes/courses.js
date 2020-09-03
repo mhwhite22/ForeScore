@@ -3,11 +3,14 @@ var router = express.Router();
 const coursesCtrl = require('../controllers/courses');
  // see server
 router.get('/', coursesCtrl.index);
-router.get('/:id', coursesCtrl.show);
 router.get('/new', coursesCtrl.new);
+router.get('/:id', coursesCtrl.show);
 router.post('/', coursesCtrl.create);
 router.get('/:id/edit', coursesCtrl.edit);
-router.put('/:id/update', coursesCtrl.update);
+router.put('/:id', coursesCtrl.update);
+router.delete('/:id', coursesCtrl.delete);
+
+
 
 
 
