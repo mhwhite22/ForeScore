@@ -29,12 +29,13 @@ a {
     display: flex;
     justify-content: space-around;
     align-self: center;
-    font: 20px "lucida Grande", Helvetica, Arial, sans-serif;
+    font: 10vh; "lucida Grande", Helvetica, Arial, sans-serif;
     font-weight: bold;
     width: 100%;
     height: 10vh;
     padding: 30vh;
     color: white;
+    z-index: -1;
   }
 
   #bottom-nav {
