@@ -1,0 +1,50 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-image: url("/images/green.jpg");
+    background-size: cover;
+    color: white;
+  }
+
+#indextitle {
+    margin-top: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 5vh;
+    position: fixed;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+  }
+  #navbar {
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    font: 20px "lucida Grande", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    width: 100%;
+    height: 10vh;
+    padding: 30vh;
+    color: white;
+  }
+
+  #bottom-nav {
+    margin-bottom: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 5vh;
+    position: fixed;
+    bottom: 0;
+  }

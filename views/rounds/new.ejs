@@ -1,19 +1,21 @@
-<%- include("../partials/header") %> 
-<form id="new-form" action="/rounds/" method="POST">
+<%- include("../partials/header") %>
+<div class="formwrapper">
+  <form id="new-form" class="addform" action="/rounds/" method="POST">
     <label>Date Of Play</label>
-    <input type="datetime-local" name="dateOfPlay">
-    <br>
+    <input type="date" name="dateOfPlay" />
+    <br />
     <label>Course</label>
-    <!-- <input type="text" name="course"><a href="">Add A New Course</a> -->
     <select name="course" id="courses">
-    <% courses.forEach(function(c) { %>
-        <option value='<%= c._id %>'><%= c.name %></option>
-    <% }) %>
-
-      </select>
-    <br>
+      <% courses.forEach(function(c) { %>
+      <option value="<%= c._id %>"><%= c.name %></option>
+      <% }) %>
+    </select>
+    <br />
     <label>Score</label>
-    <input type="number" name="score">
+    <input type="number" name="score" />
+    <br />
     <button type="submit">Add New Rounds</button>
-</form>
-<%- include("../partials/footer") %> 
+  </form>
+  <a id="newcourse" href="/courses/new">Add A New Course</a>
+</div>
+<%- include("../partials/footer") %>

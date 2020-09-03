@@ -1,7 +1,8 @@
 <%- include("../partials/header") %>
-<div id="formwrapper">
+<div class="formwrapper">
   <form
     id="edit-course-form"
+    class="addform"
     action="/courses/<%= course._id %>?_method=PUT"
     method="POST"
   >

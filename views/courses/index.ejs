@@ -1,14 +1,15 @@
 <%- include("../partials/header") %> 
 
 <% if (courses.length) { %>
-    <table>
+  <div class="tablewrapper"> 
+  <table>
       <thead>
         <tr>
           <th>Name</th>
           <th>Location</th>
           <th>Par</th>
           <th>Yardage</th>
-          <th>Slope Rating</th>
+          <th>Slope</th>
           <th>Holes</th>
         </tr>
       </thead>
@@ -25,6 +26,7 @@
         <% }); %>
       </tbody>
     </table>
+  </div> 
     <% } else { %>
     <h5>No Courses to Display</h5>
     <% } %> 

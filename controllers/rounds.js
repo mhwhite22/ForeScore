@@ -4,7 +4,8 @@ const Round = require('../models/round');
 module.exports = {
     index,
     new: newRound,
-    create
+    create,
+    show
 }
 
 function create(req, res) {
@@ -30,10 +31,9 @@ function newRound(req, res) {
   })
 }
 
-// function show (req, res) {
-//     // Round.find({user: req.params.id}, function(err, rounds){
-//     //     if (err) return console.log(err);
-//     //     console.log(err);
-//     //     res.render('rounds/show', {title: 'My Rounds', rounds, user: req.user});
-//     // });
-// }
+function show (req, res) {
+    Round.findById(req.params.id).populate('course').exec(function(err, rounds){
+        if (err) return console.log(err);
+        res.render('rounds/show', {title: '', rounds, user: req.user});
+    });
+}

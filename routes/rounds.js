@@ -3,9 +3,9 @@ var router = express.Router();
 const roundsCtrl = require('../controllers/rounds');
 
 router.get('/', roundsCtrl.index);
-//router.get('/rounds/show', roundsCtrl.show);
 router.get('/new', roundsCtrl.new);
 router.post('/', roundsCtrl.create);
+router.get('/:id', roundsCtrl.show);
 
 
 function isLoggedIn(req, res, next) {
