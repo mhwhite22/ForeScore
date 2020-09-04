@@ -1,21 +1,19 @@
-<%- include("../partials/header") %> 
-
-<% if (courses.length) { %>
-  <div class="tablewrapper"> 
+<%- include("../partials/header") %> <% if (courses.length) { %>
+<div class="tablewrapper">
   <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Location</th>
-          <th>Par</th>
-          <th>Yardage</th>
-          <th>Slope</th>
-          <th>Holes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% courses.forEach(function(c) { %>
-        <tr>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Par</th>
+        <th>Yardage</th>
+        <th>Slope</th>
+        <th>Holes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% courses.forEach(function(c) { %>
+      <tr>
         <td><a href="/courses/<%= c._id %>"><%= c.name %></a></td>
         <td><%= c.location %></td>
         <td><%= c.par %></td>
@@ -23,12 +21,10 @@
         <td><%= c.slope %></td>
         <td><%= c.numHoles %></td>
       </tr>
-        <% }); %>
-      </tbody>
-    </table>
-  </div> 
-    <% } else { %>
-    <h5>No Courses to Display</h5>
-    <% } %> 
-
-<%- include("../partials/footer") %> 
+      <% }); %>
+    </tbody>
+  </table>
+</div>
+<% } else { %>
+<h5>No Courses to Display</h5>
+<% } %> <%- include("../partials/footer") %>

@@ -5,7 +5,7 @@ module.exports = {
     index,
     new: newRound,
     create,
-    show
+   // show  feature currently under development
 }
 
 function create(req, res) {
@@ -31,9 +31,9 @@ function newRound(req, res) {
   })
 }
 
-function show (req, res) {
-    Round.findById(req.params.id).populate('course').exec(function(err, rounds){
-        if (err) return console.log(err);
-        res.render('rounds/show', {title: '', rounds, user: req.user});
-    });
-}
+// function show (req, res) {
+//     Round.findById(req.params.id).populate('course').exec(function(err, rounds){
+//         if (err) return console.log(err);
+//         res.render('rounds/show', {title: '', rounds, user: req.user});
+//     });
+// }

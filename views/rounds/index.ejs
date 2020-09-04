@@ -1,6 +1,5 @@
-<%- include("../partials/header") %> 
-<% if (rounds.length) { %>
-  <div class="tablewrapper">
+<%- include("../partials/header") %> <% if (rounds.length) { %>
+<div class="tablewrapper">
   <table>
     <thead>
       <tr>
@@ -13,18 +12,16 @@
     <tbody>
       <% rounds.forEach(function(r) { %>
       <tr>
-      <td><%= new Date(r.dateOfPlay).toLocaleString() %></td>
-      <td><%= r.course.name %></td>
-      <td><%= r.score %></td>
-      <td><%= (r.score - r.course.par) %></td>
-      <td><a href="/rounds/<%= r._id %>">Details</a></td>
+        <td><%= new Date(r.dateOfPlay).toLocaleString() %></td>
+        <td><%= r.course.name %></td>
+        <td><%= r.score %></td>
+        <td><%= (r.score - r.course.par) %></td>
       </tr>
       <% }); %>
     </tbody>
   </table>
 </div>
-  <% } else { %>
-  <h3>No Rounds to Display</h3>
-  <a href="/rounds/new">Add Rounds</a>
-  <% } %> 
-  <%- include("../partials/footer") %> 
+<% } else { %>
+<h3>No Rounds to Display</h3>
+<a href="/rounds/new">Add Rounds</a>
+<% } %> <%- include("../partials/footer") %>
